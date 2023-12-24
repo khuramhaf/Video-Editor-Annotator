@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-36TNB1000S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36TNB1000S');
+</script>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Easy to use Free Onilne Video Editor that can edit MP4 Files. You can also apply basic audio effects.">
+    <meta name="keywords" content="Online Video Editor, MP4 Editor Online, MP4 Cutter, MP4 Trimmer" />
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="wufile.js"></script>
+    <script src="play.js"></script>
+    <script src="wutrim.js"></script>
+    <script src="wucut.js"></script>
+    <script src="undo.js"></script>
+   <script src="export.js"></script>
+
+   <script src="fades.js"></script>
+   <script src="fadespreview.js"></script>
+   <script src="biquad.js"></script>
+   <script src="biquadpreview.js"></script>
+   <script src="loadsample.js"></script>
+   <script src="chrous.js"></script>
+   <script src="chrouspreview.js"></script>
+   <script src="distortion.js"></script>
+   <script src="compressor.js"></script>
+   <script src="compressorpreview.js"></script>
+   <script src="distortionpreview.js"></script>
+   <script src="echo.js"></script>
+   <script src="echopreview.js"></script>
+   <script src="recorder.js"></script>
+   <script src="playback.js"></script>
+   <script src="playbackpreview.js"></script>
+   <script src="reverb.js"></script>
+   <script src="reverbpreview.js"></script>
+   <script src="drawing.js"></script>
+   <script src="jmuxer.js"></script>
+
+  <script src="tuna.js"></script>
+  <script src="pingpong.js"></script>
+  <script src="pingpongpreview.js"></script>
+
+  <script src="overdrive.js"></script>
+  <script src="overdrivepreview.js"></script>
+  <script src = "mp4box.js"></script>
+
+  <script src = "mp4-muxer.js"></script>
+  <script src = "addtext.js"></script>
+  <script src = "exporttext.js"></script>
+  <script src = "addsquare.js"></script>
+  <script src = "addcircle.js"></script>
+  <script src = "addtriangle.js"></script>
+  <script src = "addpoly.js"></script>
+  <script src = "addpath.js"></script>
+  <script src = "addcolor.js"></script>
+  <script src = "addimage.js"></script>
+  <script src = "addsvg.js"></script>
+  <script src = "animate.js"></script>
+  <script src = "removeaniandgraphics.js"></script>
+  <script src = "addfont.js"></script>
+  <script src = "applygrayscale.js"></script>
+  <script src = "applysepia.js"></script>
+  <script src = "applyblur.js"></script>
+  <script src = "applybrightness.js"></script>
+  <script src = "applycontrast.js"></script>
+  <script src = "filterfun.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"> 
+    </script> 
+
+
+
+
+ 
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Free Online Video Editor</title>
+</head>
+<body>
+<div style="width:100%; position: absolute; background-color: blue; height:100vh" id = "spinner1"><h2 style="padding:20px;">Video is Under Processing. It may take some time depends upon the video size and resolution</h2><p style="font-size:30px; padding:20px;" id="framecount"></p><div class="spinner" id="Spinner"></div></div>
+
+<div id = "addcolorux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone20()" style="float:right">x</button>
+  <h5>Color</h5>
+
+
+  <div>
+  <label>Red:</label>
+  <br/>
+  <input id="red" type="number" required/>
+  <br/>
+  <label>Green:</label>
+  <br/>
+  <input id="green" type="number" required/>
+  <br/>
+  <label>Blue:</label>
+  <br/>
+  <input id="blue" type="number" required/>
+  </div>
+  <br/>
+ 
+  <br/>
+  <button onclick="addcolor1()">Apply</button>
+  
+  
+  </div>
+
+
+
+  
+
+
+
+  <div id = "animationux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+    <button onclick="displaynone21()" style="float:right">x</button>
+    <h5>Animation</h5>
+  
+  
+    <div>
+    <label>From:</label>
+    <br/>
+    <input id="from" type="number" required/>
+    <br/>
+    <label>To:</label>
+    <br/>
+    <input id="to" type="number" required/>
+    <br/>
+    </div>
+    <label>Select Property:</label>
+    <br/>
+<select id ="property">
+    <option value="left">Left</option>
+    <option value="top">Top</option>
+    <option value="width">Width</option>
+    <option value="height">Height</option>
+    <option value="angle">Angle</option>
+    <option value="opacity">Opacity</option>
+    <option value="scaleX">ScaleX</option>
+    <option value="scaleY">ScaleY</option>
+    <option value="skewX">SkewX</option>
+    <option value="skewY">SkewY</option>
+    <option value="radius">Radius:Circle</option>
+    <option value="fontSize">Font Size: Text</option>
+
+
+</select>
+<br/>
+    <button onclick="addanimation1()">Apply</button>
+    
+    
+    </div>
+
+
+
+    <div id = "fontux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone22()" style="float:right">x</button>
+      <h5>Edit Font</h5>
+    
+    
+      <div>
+      <label>Font Size:</label>
+      <br/>
+      <input id="fontsize" type="number" required/>
+      <br/>
+      <label>Font Style:</label>
+      <br/>
+  <select id ="fontstyle">
+      <option value="normal">Normal</option>
+      <option value="italic">Italic</option>
+      <option value="oblique">Oblique</option>
+  
+  
+  </select>
+  <br/>
+
+  <label>Font Family:</label>
+  <br/>
+  <select id ="fontfamily">
+    <option value="Arial">Arial</option>
+    <option value="Time New Roman">Time New Roman</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Times">Times</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Courier">Courier</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Palatino">Palatino</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Bookman">Bookman</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Trebuchet MS">Trebuchet MS</option>
+    <option value="Arial Black">Arial Black</option>
+
+
+</select>
+
+
+<br/>
+<label>Font Weight:</label>
+<br/>
+<select id ="fontweight">
+<option value="normal">Normal</option>
+<option value="bold">Bold</option>
+
+
+</select>
+<br/>
+      <button onclick="fontsize1()">Apply</button>
+      
+      
+      </div>
+    </div>
+
+
+
+
+
+  
+  <div id = "gainux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+    <button onclick="displaynone1()" style="float:right">x</button>
+    <h5>Fade In and Out</h5>
+  
+
+    <div>
+    <label>Starting Gain:</label>
+    <button style="margin-left: 10%;float:right" onclick="fadespreview()">Preview</button>
+    
+    <br/>
+    <input id="gainstart" type="number" required/>
+    <br/>
+    <label>Ending Gain:</label>
+    <br/>
+    <input id="gainreach" type="number" required/>
+    </div>
+    <br/>
+   
+   
+    <label>Select Option:</label>
+        <br/>
+    <select id ="gainselect">
+        <option>set value at time</option>
+        <option>linear ramp</option>
+        <option>exponential ramp</option>
+    </select>
+    <br/>
+    <button onclick="fades()">Apply</button>
+    
+    
+    </div>
+
+
+  
+    <div id = "chrousux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone3()" style="float:right">x</button>
+
+      <h5>Chrous</h5>
+      <div>
+      <label>Depth:</label>
+      <button style="margin-left: 10%;float:right;" onclick="chrouspreview1()">Preview</button>
+      
+      <br/>
+      <input id="depth" type="number" required/>
+      <br/>
+      <label>Rate:</label>
+      <br/>
+      <input id="rate" type="number" required/>
+      </div>
+      <br/>
+
+      
+      <label>Select Option:</label>
+          <br/>
+      <select id ="chrousselect">
+          <option>sine</option>
+          <option>square</option>
+          <option>sawtooth</option>
+          <option>triangle</option>
+      </select>
+      <br/>
+      <button onclick="chrous1()">Apply</button>
+      
+      
+      </div>
+
+
+
+
+      
+
+  
+    <div id = "disux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone4()" style="float:right">x</button>
+
+      <h5>Distortion</h5>
+      <div>
+      <label>Gain:</label>
+      <button style="margin-left: 10%;float:right" onclick="distortionpreview1()">Preview</button>
+      
+      <br/>
+      <input id="gain1" type="number" required/>
+      <br/>
+      <label>Amount:</label>
+      <br/>
+      <input id="amount" type="number" required/>
+      </div>
+      <br/>
+      <button onclick="distortion1()">Apply</button>
+      
+      
+      </div>
+
+
+
+    <div id = "biquadux" style=" height: 450px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone2()" style="float:right">x</button>
+
+      <h5>Biquad Filter</h5>
+      <div>
+      <label>Frequency:</label>
+      <button style="margin-left: 10%;float:right" onclick="biquadpreview()">Preview</button>
+      <br/>
+      <input id="frequency" type="number" required/>
+      <br/>
+      <label>Frequency Reach:</label>
+      <br/>
+      <input id="reach" type="number" required/>
+      <br/>
+      <label>Q Value:</label>
+      <br/>
+      <input id="qvalue" type="number" required/>
+      <br/>
+      <label>Gain:</label>
+      <br/>
+      <input id="gain" type="number" required/>
+      </div>
+      <br/>
+      <label>Select Option:</label>
+          <br/>
+      <select id ="type">
+          <option>low pass</option>
+          <option>high pass</option>
+          <option>band pass</option>
+          <option>low shelf</option>
+          <option>high shelf</option>
+          <option>peaking</option>
+          <option>notch</option>
+            <option>all pass</option>
+      </select>
+      <br/>
+     
+      <label>Select Option:</label>
+          <br/>
+      <select id ="freqselect">
+          <option>set value at time</option>
+          <option>linear ramp</option>
+          <option>exponential ramp</option>
+      </select>
+      <br/>
+      <button onclick="biquad()">Apply</button>
+      
+      
+      </div>
+   
+      <div id = "compressionux" style=" height: 400px;position:absolute;background-color:red; padding:20px;">
+        <button onclick="displaynone5()" style="float:right">x</button>
+
+        <h5>Compression</h5>
+        <div>
+        <label>Threshold (between -100 to 0):</label>
+        <button style="margin-left:10%;float:right" onclick="compressorpreview1()">Preview</button>
+
+        
+        <br/>
+        <input  id="threshold" type="number"  required/>
+        <br/>
+        <label>Knee (between 0 to 40):</label>
+        <br/>
+        <input  id="knee" type="number"  required/>
+        <br/>
+        <label>Ratio (between 1 to 20):</label>
+        <br/>
+        <input  id="ratio" type="number"  required/>
+        <br/>
+        <label>Attack (between 0 to 1):</label>
+        <br/>
+        <input  id="attack" type="number"  required/>
+        <br/>
+        <label>Release (between 0 to 1):</label>
+        <br/>
+        <input  id="release" type="number"  required/>
+        </div>
+        <button onclick="compressor1()">Apply</button>
+    
+    
+    </div> 
+
+
+  
+    <div id = "echoux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone6()" style="float:right">x</button>
+
+      
+      <h5>Echo</h5>
+      <div>
+      <label>Delay (between 0 and 1):</label>
+      <button style="margin-left:10%;float:right" onclick="echopreview1()">Preview</button>
+
+      
+      <br/>
+      <input id="delay" type="number" required/>
+      <br/>
+      <label>Feedback:</label>
+      <br/>
+      <input id="feedback" type="number" required/>
+      <br/>
+      </div>
+      <button onclick="echo1()">Apply</button>
+  
+  
+  </div> 
+
+
+  <div id = "playbackux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+    <button onclick="displaynone7()" style="float:right">x</button>
+
+    
+    <h5>Playback Rate</h5>
+    <div>
+    <label>Playback Rate:</label>
+    <button style="margin-left:10%;float:right" onclick="playbackpreview1()">Preview</button>
+
+    
+    <br/>
+    <input id="playbackrate" type="number" required/>
+    <br/>
+    </div>
+    <button onclick="playback1()">Apply</button>
+
+
+</div>  
+
+
+
+
+<div id = "reverbux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone8()" style="float:right">x</button>
+
+<h5>Reverb</h5>
+<div>
+<label>Wet:</label>
+<button style="margin-left:10%;float:right" onclick="reverbpreview1()">Preview</button>
+
+
+<br/>
+<input id="wet" type="number" required/>
+<br/>
+<label>Gain:</label>
+<br/>
+<input id="gain2" type="number" required/>
+<br/>
+</div>
+<button onclick="reverb1()">Apply</button>
+
+
+</div>  
+
+
+
+
+
+<div id = "pingpongux" style=" height: 320px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone9()" style="float:right">x</button>
+
+<h5>Pingpong Delay</h5>
+<div>
+<label>Wet (0 to 1):</label>
+<button style="margin-left:10%;float:right" onclick="pingpongpreview1()">Preview</button>
+
+
+<br/>
+<input id="pingwet" type="number" required/>
+<br/>
+<label>Feedback (0 to 1):</label>
+<br/>
+<input id="pingfeedback" type="number" required/>
+<br/>
+<label>Delay Time Left (1 to 10000):</label>
+<br/>
+<input id="dtl" type="number" required/>
+<br/>
+<label>Delay Time Right (1 to 10000):</label>
+<br/>
+<input id="dtr" type="number" required/>
+<br/>
+</div>
+<button onclick="pingpong1()">Apply</button>
+
+
+</div>  
+
+
+
+
+<div id = "overdriveux" style=" height: 320px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone10()" style="float:right">x</button>
+
+<h5>Over Drive</h5>
+<div>
+<label>Output Gain (0 to -42):</label>
+<button style="margin-left:10%;float:right" onclick="overdrivepreview1()">Preview</button>
+
+
+<br/>
+<input id="outputgain" type="number" required/>
+<br/>
+<label>Drive (0 to 1):</label>
+<br/>
+<input id="drive" type="number" required/>
+<br/>
+<label>Curve Amount (0 to 1):</label>
+<br/>
+<input id="curveamount" type="number" required/>
+<br/>
+<label>Algorithm Index (0 to 5):</label>
+<br/>
+<input id="algorithmindex" type="number" required/>
+<br/>
+</div>
+<button onclick="overdrive1()">Apply</button>
+
+
+</div>  
+
+
+
+
+    <div id ="container">
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img src="amooiz.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <li><a class="dropdown-item" href="index.html">Video Editor</a></li>
+                         <li><a class="dropdown-item" href="audio/audio-editor.html">Audio Editor</a></li>
+                      
+                    
+
+
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="privacy-policy.html">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+
+              <button style="float:right;" onclick="loadsample()">Load Sample</button>
+              <button style="float:right;" onclick="exportdata1()">Export with Drawing</button>
+              <button style="float:right;" onclick="exportdata()">Export</button>
+            </div>
+           
+          </nav>
+    
+    
+    
+        <h1>Free Online Video Editor</h1>
+
+     
+    <div class="input-group mb-3">
+        <div class = "col-sx-3">
+        <input type="file" class="form-control" id="inputGroupFile02" onchange="myFunction()">
+       </div> <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>
+    <span id="status"></span>
+    <div>
+    <span>Error: </span>
+    <span style="color:red" id = "error"></span>
+</div>
+    <div id = "audioinfo">
+    <span >Video Time: </span>
+    <span id = 'timer'>0</span>
+    <span  class ="info">Video Duration: </span>
+    <span   id = 'duration'>0</span>
+    <br id = "linebreak"/>
+    <span id ="totallength1"  class="info" >Total Length: </span>
+    <span  id = 'totallength'>0</span>
+    <span  class="info">Selected Length: </span>
+    <span  id = 'selectedlength'>0</span>
+</div>
+
+    <div style=" background-color:lightblue;padding:15px;">
+        <div>
+<canvas style="border:2px solid black" id = "canvas1"></canvas>
+
+
+<canvas id="canvas12" style="border:1px solid black; background-color: gainsboro;"></canvas>
+<canvas onclick="drawline1()"  onmousedown="mouseDown(event)" onmousemove="mouseMove(event)" onmouseup="mouseUp(event)"  id ="canvas11" width="1290" height="150" style="background-color: blue;"></canvas>
+<canvas height = "20" width="1290" id="canvas13" style="border:1px solid black; background-color: gainsboro;"></canvas>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Starting Time in Seconds</span>
+  <div class = "col-sx-3">
+  <input oninput="keydownfun(this)" id = "start" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Ending Time in Seconds</span>
+    <div class = "col-sx-3">
+    <input oninput="keydownfun(this)"  id = "end" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+</div>
+</div>
+
+
+
+        <div id = "button" class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary"onclick="play()">Play</button>
+            <button type="button" class="btn btn-primary" onclick="stop()">Stop</button>
+       
+            <button id = "stopreco" type="button" class="btn btn-danger" onclick="stopRecording()">Stop Recording</button>
+
+            <button type="button" class="btn btn-primary" onclick="trim()">Delete</button>
+            <button type="button" class="btn btn-primary" onclick="cut()">Cut</button>
+            <button type="button" class="btn btn-primary" onclick="undodata()">Undo</button>
+            <button type="button" class="btn btn-primary" onclick="addanimation()">Add Animation</button>
+
+
+
+
+
+
+
+
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Edit
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="addcolor()">Color</a></li>
+                <li><a class="dropdown-item" onclick="fontsize()">Font</a></li>
+
+               
+              </ul>
+            </div>
+
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Apply Filters
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="grayscale1()">Grayscale</a></li>
+                <li><a class="dropdown-item" onclick="sepia1()">Sepia</a></li>
+                <li><a class="dropdown-item" onclick="blur1()">Blur</a></li>
+                <li><a class="dropdown-item" onclick="brightness1()">Brightness</a></li>
+                <li><a class="dropdown-item" onclick="contrast1()">Contrast</a></li>
+
+               
+              </ul>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               Add
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="addtext1()">Add Text</a></li>
+                <li><a class="dropdown-item" onclick="addsquare1()">Add Square</a></li>
+
+                <li><a class="dropdown-item" onclick="addcircle1()">Add Circle</a></li>
+                <li><a class="dropdown-item" onclick="addtriangle1()">Add Triangle</a></li>
+                <li><a class="dropdown-item" onclick="addpoly1()">Add Polyline</a></li>
+                <li><a class="dropdown-item" onclick="addpath1()">Add Path</a></li>
+                <li><a class="dropdown-item" onclick="addimage1()">Add Image</a></li>
+                <li><a class="dropdown-item" onclick="addsvg1()">Add SVG</a></li>
+
+              </ul>
+            </div>
+
+
+
+
+
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               Audio Effects
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="gain()">Gain</a></li>
+                <li><a class="dropdown-item" onclick="frequency()">Biquad Filter</a></li>
+                <li><a class="dropdown-item" onclick="chrous()">Chorus</a></li>
+                <li><a class="dropdown-item" onclick="distortion()">Distortion</a></li>
+                <li><a class="dropdown-item" onclick="compression()">Compression</a></li>
+                <li><a class="dropdown-item" onclick="echo()">Echo</a></li>
+                <li><a class="dropdown-item" onclick="playback()">Playback</a></li>
+                <li><a class="dropdown-item" onclick="reverb()">Reverb</a></li>
+                <li><a class="dropdown-item" onclick="pingpong()">PingPong Delay</a></li>
+                <li><a class="dropdown-item" onclick="overdrive()">Over Drive</a></li>
+
+              
+              </ul>
+            </div>
+          </div>
+          <div style="padding:10px;">
+          <div style="width:50%;float:left;padding:10px;background-color:aqua">
+            <h3>Graphics Data</h3>
+            <p>Double Click to remove</p>
+            <ul id="removegraphics" class="list-group">
+            
+            </ul>
+          </div>
+<div style="width:50%;float:right;padding:10px;background-color:lightpink">
+          <h3>Animation Data</h3> 
+          <p>Double Click to remove</p>
+          <ul id="animationadd" class="list-group">
+          
+          </ul>
+        </div>
+
+        <div style="width:50%;float:left;padding:10px;background-color:lightpink">
+          <h3>Filter Data</h3> 
+          <p>Double Click to remove</p>
+          <ul id="filterdata" class="list-group">
+          
+          </ul>
+        </div>
+      </div>
+       <div style="clear:both"></div>
+
+<p>Online Video Editor that can perform Video Deleting and Cutting. You can only edit MP4 File in it.This is purely
+   browser based video editor and you do not require to upload any file to the server. You can also apply audio effects.You can also add graphics (e.g images, shapes, text) to your video.
+</p>
+
+<h3>How to add Graphics to your video?</h3>
+<p>To add graphics to your video, click on 'Choose File' and select a file. Once the file is decoded, specify the starting and ending times. Next, click on 'Add' from the bottom menu and select the desired option. Your graphics will be added at the selected part.
+</p>
+<div >
+<iframe style="display:inline-block" width="560" height="315" src="https://www.youtube.com/embed/Em42TffrUhc?si=ld8XebMx-kbg0AU5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<h3>How to add Animation to your video?</h3>
+<p>To include motion graphics in your video, visit the website www.amooiz.com and click on 'Choose File' to select a file. After the file is decoded, specify the start and end times. Then, select 'Add' from the bottom menu and choose your desired option. Once the option is selected, click on the added graphics and select 'Add Animation'. A popup will appear. Enter the 'From' and 'To' numbers, choose the animation type from the 'Property' dropdown, and click 'Apply'. Your animation has been applied. You can now click the 'Play' button to preview the animation.
+</p>
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TDKoQ2K0wlE?si=lyx_Udbz1MtkmULO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+
+
+   
+   <script>
+
+var canvas22;
+var filterid=0;
+var animationid = 0;
+    var drawing = []
+    var drawingid = 0;
+    var selectedid;
+var meta;
+var metadata;
+var numberofsamples = 0;
+
+var a = 0;
+//video variables
+var videodata=[]
+        var codecinfo;
+        var avcC;
+
+        var videointerval;
+var videochunk =[];
+
+var exportflag=0;
+var keyframe;
+
+var undo1=[]
+var framestart
+
+        var videoinfo = {
+          width:0,
+          height:0,
+          duration:0,
+          samplerate:0,
+        }
+
+const encoder = new VideoEncoder({
+  output(chunk, metadata) {
+   
+    videodata.push(chunk)
+
+document.getElementById("framecount").innerHTML ="Total Video Frames: "+numberofsamples+ "<br/> Video Frame Processed: " + a
+a++;
+
+if (a===numberofsamples-5){
+
+  document.getElementById("status").innerHTML = "";
+        document.getElementById("Spinner").style.display = "none"
+        document.getElementById("spinner1").style.display = "none"
+}
+    
+
+
+ 
+meta = metadata.decoderConfig;
+metadata = metadata
+  },
+  error(error) {
+    console.log(error);
+  },
+});
+
+
+
+
+var filterarray = []
+   var animationarray=[];
+        var bufferarray = [];
+        var audiocontext;
+        var source;
+        var time=0;
+        let intervalid;
+        var check = null;
+        var sourcecheck = null;
+        var sourceduration = 0;
+        var undo = [];
+        var source1;
+        var intervalid12
+        var rectx = 0;
+var recty =0
+var rectwidth = 0;
+var rectheight = 0;
+
+var rect1x=0;
+var rect1y = 0;
+var rectangle = 0;
+
+
+var rect1width = 0;
+var rect1height = 0;
+
+
+
+
+
+
+      
+    
+
+
+
+
+function stop(){
+if (source){
+    source.stop();
+    clearInterval(intervalid);
+}
+
+if (source1){
+    source1.stop();
+}
+
+clearInterval(intervalid12)
+
+clearInterval(videointerval)
+}
+
+
+    
+function keydownfun(){
+
+if (check!==null){
+
+var start =parseFloat(document.getElementById("start").value)
+var end =parseFloat(document.getElementById("end").value);
+var index = end*audiocontext.sampleRate - start*audiocontext.sampleRate;
+document.getElementById("selectedlength").innerHTML=parseInt(index);
+}
+
+document.getElementById("error").innerHTML = "";
+}
+
+
+function gain(){
+
+  document.getElementById("gainux").style.display = "block"
+}
+
+
+function frequency(){
+
+document.getElementById("biquadux").style.display = "block"
+}
+
+function chrous(){
+
+  document.getElementById("chrousux").style.display = "block"
+
+}
+
+function distortion(){
+
+document.getElementById("disux").style.display = "block"
+
+}
+
+function compression(){
+
+document.getElementById("compressionux").style.display = "block"
+
+}
+
+
+function echo(){
+
+document.getElementById("echoux").style.display = "block"
+
+}
+
+function playback(){
+
+document.getElementById("playbackux").style.display = "block"
+
+}
+
+function reverb(){
+
+document.getElementById("reverbux").style.display = "block"
+
+}
+
+function pingpong(){
+
+document.getElementById("pingpongux").style.display = "block"
+
+}
+
+
+function overdrive(){
+
+document.getElementById("overdriveux").style.display = "block"
+
+}
+
+
+function addcolor(){
+
+document.getElementById("addcolorux").style.display = "block"
+
+}
+
+
+function addanimation(){
+
+document.getElementById("animationux").style.display = "block"
+
+}
+
+
+function fontsize(){
+
+document.getElementById("fontux").style.display = "block"
+
+}
+
+
+function displaynone1(){
+
+  document.getElementById("gainux").style.display = "none"
+}
+
+function displaynone2(){
+
+document.getElementById("biquadux").style.display = "none"
+}
+
+
+function displaynone3(){
+
+document.getElementById("chrousux").style.display = "none"
+}
+
+function displaynone4(){
+
+document.getElementById("disux").style.display = "none"
+}
+
+function displaynone5(){
+
+document.getElementById("compressionux").style.display = "none"
+}
+
+
+function displaynone6(){
+
+document.getElementById("echoux").style.display = "none"
+}
+
+function displaynone7(){
+
+document.getElementById("playbackux").style.display = "none"
+}
+
+
+function displaynone8(){
+
+document.getElementById("reverbux").style.display = "none"
+}
+
+
+function displaynone9(){
+
+document.getElementById("pingpongux").style.display = "none"
+}
+
+
+
+function displaynone10(){
+
+document.getElementById("overdriveux").style.display = "none"
+}
+
+
+
+function displaynone20(){
+
+document.getElementById("addcolorux").style.display = "none"
+}
+
+function displaynone21(){
+
+document.getElementById("animationux").style.display = "none"
+}
+
+
+function displaynone22(){
+
+document.getElementById("fontux").style.display = "none"
+}
+
+
+
+var videoDecoder = new VideoDecoder({
+  output: processVideo,
+  error: onDecoderError,
+});
+
+function processVideo(frame){
+
+encoder.encode(frame, {keyFrame:true})
+    frame.close();
+
+if (videoDecoder.decodeQueueSize ===0){
+
+ 
+}
+
+    
+}
+
+function onDecoderError(error){
+
+    console.log(error);
+}
+
+
+window.addEventListener("keydown", function(event){
+if(event.keyCode === 46 || event.key === 'Delete'){
+
+  for(i=0; i<drawing.length;i++){
+
+    if(drawing[i].id === selectedid){
+
+      drawing.splice(i, 1)
+    }
+
+    document.getElementById("removegraphics").innerHTML = '';
+    document.getElementById("animationadd").innerHTML = '';
+
+    
+
+remove()
+     }
+
+  canvas22.clear();
+
+
+  for (i=0;i<drawing.length;i++){
+
+    canvas22.add(drawing[i])
+  }
+}
+})
+
+
+
+    </script>
+
+  
+</body>
+</html>

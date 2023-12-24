@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<!-- Loading the FabricJS library -->
+	<script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"> 
+	</script> 
+</head> 
+
+<body> 
+	<div style="text-align: center;width: 400px;"> 
+	<h1 style="color: green;"> 
+		GeeksforGeeks 
+	</h1>
+	<b> 
+		Fabric.js | Text width Property 
+	</b> 
+	</div> 
+
+	<div style="text-align: center;"> 
+	<canvas id="canvas" width="400" height="200"
+			style="border:1px solid green;"> 
+	</canvas> 
+	</div> 
+
+	<script> 
+	// Create a new instance of Canvas 
+	var canvas = new fabric.Canvas("canvas"); 
+
+	// Create a new Text instance 
+	var geek = new fabric.Text('GeeksforGeeks', { 
+		width: 15
+	});
+
+	// Render the text on Canvas 
+	canvas.add(geek); 
+	canvas.centerObject(geek);
+	</script> 
+</body> 
+
+</html>

@@ -1,0 +1,393 @@
+body {
+    font-family: 'MyCustomFont', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .video{
+    width:50%;
+    height:50vh;
+  }
+
+  #canvas1{
+
+  
+    background-color:black;
+
+  }
+
+
+  #canvas11{
+    display:block;
+    margin-top:0;
+  }
+
+  #canvas12{
+
+    width:100%;
+    height:20px;
+    margin-bottom:-8px;
+  }
+  #canvas13{
+
+    width:100%;
+    height:20px;
+  }
+
+
+
+  #stopreco{
+    display:none;
+  }
+
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    z-index: 5;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left:40%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+  #container{
+    width:100%;
+    padding:1%;
+  }
+
+  #Spinner{
+    display:none;
+  }
+
+  
+  #spinner1{
+    display:none;
+    z-index: 4;
+  }
+
+
+  #addcolorux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+
+  
+  #animationux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #fontux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+
+  #gainux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+
+  #pingpongux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  
+  #reverbux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #playbackux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #echoux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+
+  #disux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #compressionux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #chrousux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+#navbar{
+   
+    width:70%;
+    float:left;
+    font-size:16px;
+}
+  #navbar a{
+text-decoration: none;
+margin-left: 10px;
+
+    
+  }
+
+  #biquadux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #overdriveux{
+    display:none;
+    z-index: 1;
+    width:40%
+  }
+
+  #heavyfun{
+    float:right;
+    width:30%;
+    
+  }
+
+
+  #navbarmain:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+
+.canvas{
+
+    position:absolute;
+    Left:0;
+    bottom:0;
+    padding:20px;
+    background-color: blue;
+}
+
+
+.button:hover{
+    background-color:red;
+}
+
+.button1{
+    font-size: 18px;
+    background-color: blue;
+    color:white;
+    border:none;
+    padding:12px;
+}
+.button1:hover{
+    background-color:red;
+}
+
+
+
+
+.iframe{
+    width:60%;
+    height: 460px;
+}
+.input{
+    padding:7px;
+    font-size: 16px;
+}
+
+
+
+#linebreak{
+    display:none;
+}
+
+.info{
+    margin-left:40px;
+}
+
+#menu{
+    display:none;
+}
+#information{
+    display:block;
+}
+
+#audioinfo{
+
+    font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .iframe{
+        width:100%;
+        height:350px;
+    }
+
+    #menu{
+        width:100%;
+        display:block;
+    }
+    #linebreak{
+        display:block;
+    }
+
+    #totallength1{
+        margin-left:0px;
+    }
+
+    
+.button2{
+    display:block;
+    border:none;
+    width:100%;
+    padding-bottom:4%;
+    padding-top:3%;
+}
+
+#information{
+    display:none;
+}
+
+#navbar{
+    float:none;
+   
+    
+   width:100%;
+   
+}
+#heavyfun{
+    float:none;
+  width:100%;
+    margin-top:10px;
+    
+}
+
+#gainux{
+  width:70%
+}
+
+#echoux{
+  width:70%
+}
+
+#biquadux{
+
+  width:70%
+}
+
+
+#fontux{
+
+  width:70%
+}
+
+#disux{
+
+  width:70%
+}
+
+
+#chrousux{
+
+  width:70%
+}
+
+
+
+#reverbux{
+
+  width:70%
+}
+
+
+#compressionux{
+
+  width:70%
+}
+
+#playbackux{
+
+  width:70%
+}
+
+
+#animationux{
+
+  width:70%
+}
+
+#pingpongux{
+
+  width:70%
+}
+
+
+#overdriveux{
+
+  width:70%
+}
+
+#addcolorux{
+
+  width:70%
+}
+
+
+.video{
+  width:100%;
+  height:40vh;
+}
+
+#ad{
+  width:50%;
+}
+
+#canvas11{
+  display:none;
+}
+
+
+#canvas12{
+
+  width:100%;
+  height:20px;
+}
+
+  }
