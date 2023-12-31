@@ -11,6 +11,7 @@ Open the localhost 3000<br/>
 or
 
 <br/>
+<br/>
 
 Clone Repo <br/>
 Open "Index.html" with your favorite browser
@@ -26,3 +27,7 @@ Add Graphics (e.g., images, SVG, shapes) to Your Video <br/>
 Add Animation to Your Video <br/>
 Apply Filters to your video <br/>
 Apply Audio Effects <br/>
+
+
+![image](https://github.com/khuramhaf/Video-Editor/assets/54737781/61b9eeac-a652-4597-b6b4-0832983b5bc1)
+
