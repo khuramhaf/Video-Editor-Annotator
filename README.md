@@ -1,5 +1,7 @@
 # Video-Editor
-This is web based video editor that require no download. You also do not require to upload any file to server prior editing
+This is web based video editor that require no download. You also do not require to upload any file to server prior editing <br/>
+
+Live: https://www.amooiz.com
 
 # How to Use
 Clone the repo <br/>
@@ -29,5 +31,6 @@ Apply Filters to your video <br/>
 Apply Audio Effects <br/>
 
 
-![image](https://github.com/khuramhaf/Video-Editor/assets/54737781/61b9eeac-a652-4597-b6b4-0832983b5bc1)
+![image](https://github.com/khuramhaf/Video-Editor/assets/54737781/cdbbe664-c3f4-422f-8486-a79235a3a55f)
+
 
