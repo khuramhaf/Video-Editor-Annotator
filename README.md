@@ -30,6 +30,9 @@ Add Animation to Your Video <br/>
 Apply Filters to your video <br/>
 Apply Audio Effects <br/>
 
+# Contributions
+You are welcome to contribute to this project
+
 
 ![image](https://github.com/khuramhaf/Video-Editor/assets/54737781/cdbbe664-c3f4-422f-8486-a79235a3a55f)
 
