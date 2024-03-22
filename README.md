@@ -1,7 +1,7 @@
 # Video-Editor
 This is web based video editor that require no download. You also do not require to upload any file to server prior editing <br/>
 
-Live: https://www.amooiz.com
+See our Multi Track Video Editor: https://www.amooiz.com
 
 # How to Use
 Clone the repo <br/>
