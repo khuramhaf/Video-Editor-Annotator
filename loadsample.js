@@ -40,7 +40,7 @@ function loadsample() {
                 array3channel.set(bufferarray.getChannelData(0), 0)
     
                 if(bufferarray.numberOfChannels >1){
-                    array4channel = array3.getChannelData(1)
+                    var array4channel = array3.getChannelData(1)
                     array4channel.set(bufferarray.getChannelData(1), 0)
                 }
                             if (undo.length ===3){
@@ -59,9 +59,10 @@ function loadsample() {
                 newbuffer1.set(bufferarray.getChannelData(0), 0)
                 newbuffer1.set(audiofile.getChannelData(0), bufferarray.length)
     
-                if(audiofile.numberOfChannles>1){
-                newbuffer1.set(bufferarray.getChannelData(1), 0)
-                newbuffer1.set(audiofile.getChannelData(1), bufferarray.length)
+                if(audiofile.numberOfChannels>1 && bufferarray.numberOfChannels>1){
+                var newbuffer2 = combinedbuffer1.getChannelData(1)
+                newbuffer2.set(bufferarray.getChannelData(1), 0)
+                newbuffer2.set(audiofile.getChannelData(1), bufferarray.length)
             }
                 bufferarray = combinedbuffer1;
     
@@ -233,6 +234,9 @@ if (id===1){
        
        }
        }
+   if (videoDecoder.state==="closed"){
+       videoDecoder = new VideoDecoder({ output: processVideo, error: onDecoderError });
+   }
    if (videoDecoder.state==="unconfigured"){
 
        const options = {
@@ -263,15 +267,7 @@ if (id===1){
 
 
 
-       const encoderConfig = {
-           codec: 'avc1.42001f',
-           width: videoinfo.width,
-           height: videoinfo.height,
-           hardwareAcceleration:"prefer-hardware",
-           framerate: codecinfo.samplerate,
-           latencyMode: "realtime",
-         };
-         encoder.configure(encoderConfig);
+       configureEncoder();
    
 
        var  init  = {

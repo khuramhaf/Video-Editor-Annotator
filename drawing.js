@@ -449,6 +449,12 @@ draw();
 
 if (videoDecoder1.state==="unconfigured"){
 
+    if (!meta){
+        document.getElementById("error").innerHTML = "Video is not ready yet (no decoder config). Wait for processing to finish.";
+        return;
+    }
+
+
     const options = {
         primaries: "bt709",
           transfer:"bt709",

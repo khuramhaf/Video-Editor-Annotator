@@ -839,31 +839,63 @@ var framestart
           samplerate:0,
         }
 
-const encoder = new VideoEncoder({
-  output(chunk, metadata) {
-   
-    videodata.push(chunk)
+var encoder;
 
-document.getElementById("framecount").innerHTML ="Total Video Frames: "+numberofsamples+ "<br/> Video Frame Processed: " + a
-a++;
+function createEncoder() {
+  encoder = new VideoEncoder({
+    output(chunk, metadata) {
 
-if (a===numberofsamples-5){
+      videodata.push(chunk)
 
-  document.getElementById("status").innerHTML = "";
+      document.getElementById("framecount").innerHTML = "Total Video Frames: " + numberofsamples + "<br/> Video Frame Processed: " + a
+      a++;
+
+      if (a === numberofsamples - 5) {
+        document.getElementById("status").innerHTML = "";
         document.getElementById("Spinner").style.display = "none"
         document.getElementById("spinner1").style.display = "none"
+      }
+
+      // decoderConfig is only present on the first chunk; keep it, never overwrite with undefined
+      if (metadata && metadata.decoderConfig) {
+        meta = metadata.decoderConfig;
+      }
+    },
+    error(error) {
+      // The encoder is closed automatically after an error. This is the real cause.
+      console.error("VideoEncoder error:", error);
+    },
+  });
 }
-    
+createEncoder();
 
+// Pick an H.264 (Baseline) level that fits the resolution
+function pickAvcCodec(w, h) {
+  var px = w * h;
+  if (px <= 1280 * 720) return 'avc1.42001f';   // level 3.1
+  if (px <= 1920 * 1088) return 'avc1.420028';  // level 4.0
+  return 'avc1.420033';                         // level 5.1
+}
 
- 
-meta = metadata.decoderConfig;
-metadata = metadata
-  },
-  error(error) {
-    console.log(error);
-  },
-});
+// (Re)creates the encoder if it was closed, then configures it
+function configureEncoder() {
+  if (!encoder || encoder.state === "closed") {
+    createEncoder();
+  }
+  if (encoder.state === "configured") {
+    return;
+  }
+  var w = videoinfo.width - (videoinfo.width % 2);     // H.264 needs even dimensions
+  var h = videoinfo.height - (videoinfo.height % 2);
+  encoder.configure({
+    codec: pickAvcCodec(w, h),
+    width: w,
+    height: h,
+    framerate: videoinfo.samplerate,
+    hardwareAcceleration: "no-preference",
+    latencyMode: "realtime",
+  });
+}
 
 
 
@@ -1102,15 +1134,11 @@ var videoDecoder = new VideoDecoder({
 
 function processVideo(frame){
 
-encoder.encode(frame, {keyFrame:true})
-    frame.close();
+  if (encoder && encoder.state === "configured") {
+    encoder.encode(frame, {keyFrame:true})
+  }
+  frame.close();
 
-if (videoDecoder.decodeQueueSize ===0){
-
- 
-}
-
-    
 }
 
 function onDecoderError(error){
